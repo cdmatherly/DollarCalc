@@ -29,15 +29,15 @@ export default () => {
 
 
     return (
-        <div className='h-screen w-full p-10 flex-col flex gap-5'>
-            <div className='flex justify-between items-center'>
+        <div className='flex flex-col w-full h-screen gap-5 p-10'>
+            <div className='flex items-center justify-between'>
                 <p>I need</p>
-                <p onClick={() => {handleShowNeed()} } className={Number(have) < Number(need) ? 'p-10 bg-red-500' : 'p-10'}>${need}</p>
+                <p onClick={() => {handleShowNeed()} } className={Number(have) < Number(need) ? 'w-28 h-28 flex items-center justify-center p-10 bg-red-500' : 'w-28 h-28 flex items-center justify-center p-10 border border-black'}>${need}</p>
                 { showNeedNumPad && <span className='absolute right-10'>|</span>}
             </div>
-            <div className='flex justify-between items-center'>
+            <div className='flex items-center justify-between'>
                 <p>I have</p>
-                <p onClick={() => {handleShowHave()} } className={Number(have) >= Number(need) && have != 0 ? 'p-10 bg-green-500' : 'p-10'}>${have}</p>
+                <p onClick={() => {handleShowHave()} } className={Number(have) >= Number(need) && have != 0 ? 'w-28 h-28 flex items-center justify-center p-10 bg-green-500' : 'w-28 h-28 flex items-center justify-center p-10 border border-black'}>${have}</p>
                 { showHaveNumPad && <span className='absolute right-10'>|</span>}
             </div>
             { showNeedNumPad && !showHaveNumPad ?
